@@ -4666,11 +4666,11 @@ static void smbchg_handle_hvdcp3_disable(struct smbchg_chip *chip)
 	chip->pulse_cnt = 0;
 
 	if (is_hvdcp_present(chip)) {
-		smbchg_change_usb_supply_type(chip,
-			POWER_SUPPLY_TYPE_USB_HVDCP);
+//		smbchg_change_usb_supply_type(chip,
+//			POWER_SUPPLY_TYPE_USB_HVDCP);
 	} else {
 		read_usb_type(chip, &usb_type_name, &usb_supply_type);
-		smbchg_change_usb_supply_type(chip, usb_supply_type);
+//		smbchg_change_usb_supply_type(chip, usb_supply_type);
 		if (usb_supply_type == POWER_SUPPLY_TYPE_USB_DCP)
 			schedule_delayed_work(&chip->hvdcp_det_work,
 				msecs_to_jiffies(HVDCP_NOTIFY_MS));

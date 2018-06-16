@@ -1,3 +1,4 @@
+
 /* Copyright (c) 2008-2015, The Linux Foundation. All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -38,7 +39,7 @@
 #include <soc/qcom/smd.h>
 #include <soc/qcom/smsm.h>
 #include <soc/qcom/subsystem_restart.h>
-#include <../soc/qcom/smd_private.h> //zte jiangfeng   for L in 20150304
+#include "../soc/qcom/smd_private.h" //zte jiangfeng   for L in 20150304
 
 
 #ifdef CONFIG_ARCH_FSM9XXX
