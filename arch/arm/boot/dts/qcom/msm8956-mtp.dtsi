@@ -92,15 +92,22 @@
 
 	sound-9335 {
 		qcom,msm-gpios =
+			"quin_i2s",
 			"us_eu_gpio";
 		qcom,pinctrl-names =
 			"all_off",
-			"us_eu_gpio_act";
+			"quin_act",
+			"us_eu_gpio_act",
+			"quin_us_eu_gpio_act";
 		pinctrl-names =
 			"all_off",
-			"us_eu_gpio_act";
-		pinctrl-0 = <&cross_conn_det_sus>;
-		pinctrl-1 = <&cross_conn_det_act>;
+			"quin_act",
+			"us_eu_gpio_act",
+			"quin_us_eu_gpio_act";
+		pinctrl-0 = <&pri_tlmm_lines_sus &cross_conn_det_sus>;
+		pinctrl-1 = <&pri_tlmm_lines_act &cross_conn_det_sus>;
+		pinctrl-2 = <&pri_tlmm_lines_sus &cross_conn_det_act>;
+		pinctrl-3 = <&pri_tlmm_lines_act &cross_conn_det_act>;
 		qcom,cdc-us-euro-gpios = <&msm_gpio 144 0>;
 	};
 };
@@ -124,7 +131,6 @@
 			interrupts = <0x3 0xc0 0x0>,
 				<0x3 0xc0 0x1>;
 			interrupt-names = "sc-irq", "play-irq";
-			vcc_pon-supply = <&pon_perph_reg>;
 			qcom,play-mode = "direct";
 			qcom,wave-play-rate-us = <5263>;
 			qcom,actuator-type = "lra";
@@ -142,7 +148,7 @@
 			qcom,wave-samp-rep-cnt = <1>;
 			qcom,lra-auto-res-mode="qwd";
 			qcom,lra-high-z="opt1";
-			qcom,lra-res-cal-period = <4>;
+			qcom,lra-res-cal-period = <0>;
 			qcom,correct-lra-drive-freq;
 			qcom,misc-trim-error-rc19p2-clk-reg-present;
 		};

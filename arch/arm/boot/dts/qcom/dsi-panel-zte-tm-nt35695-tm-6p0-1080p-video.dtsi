@@ -60,9 +60,6 @@
 		qcom,mdss-dsi-bl-max-level = <255>;
 		qcom,mdss-dsi-dma-trigger = "trigger_sw";
 		qcom,mdss-dsi-mdp-trigger = "none";
-
-		zte,panel-keep-reset-gpio-high;//pan,keep reset gpio high 0620
-		
 		qcom,mdss-dsi-on-command = [
 
 				39 01 00 00 00 00 02 FF 23    // CMD2 PAGE3 
@@ -83,9 +80,7 @@
                             05 01 00 00 0a 00 02 29 00
 			];
 		qcom,mdss-dsi-off-command = [05 01 00 00 96 00 02 28 00
-				 05 01 00 00 96 00 02 10 00
-				 39 01 00 00 00 00 02 4f 01 //pan ,send for deep sleep while keep rst high 0620
-				 ];
+				 05 01 00 00 96 00 02 10 00];
 		qcom,mdss-dsi-on-command-state = "dsi_lp_mode";
 		qcom,mdss-dsi-off-command-state = "dsi_hs_mode";
 		qcom,mdss-dsi-bl-pmic-control-type ="bl_ctrl_dcs"; 
