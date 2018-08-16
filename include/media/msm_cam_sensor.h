@@ -209,6 +209,15 @@ struct csi_lane_params_t {
 
 struct msm_sensor_info_t {
 	char     sensor_name[MAX_SENSOR_NAME];
+/*
+  * camera sensor module compatile
+  * 
+  * by ZTE_YCM_20140728 yi.changming 000028
+  */
+ // --->
+	char     chromtix_lib_name[MAX_SENSOR_NAME];
+	char     default_chromtix_lib_name[MAX_SENSOR_NAME];
+ // <---
 	uint32_t session_id;
 	int32_t  subdev_id[SUB_MODULE_MAX];
 	int32_t  subdev_intf[SUB_MODULE_MAX];
@@ -293,8 +302,15 @@ struct msm_eeprom_info_t {
 struct msm_eeprom_cfg_data {
 	enum eeprom_cfg_type_t cfgtype;
 	uint8_t is_supported;
+    /*
+	* Post compatible module info to vendor.by FENGYUAO_20150528.
+	*/
+	char sensor_module_name[MAX_SENSOR_NAME];
+	char chromtix_lib_name[MAX_SENSOR_NAME];
+	char default_chromtix_lib_name[MAX_SENSOR_NAME];
+	/* end */
 	union {
-		char eeprom_name[MAX_EEPROM_NAME];
+		char eeprom_name[MAX_SENSOR_NAME];
 		struct eeprom_get_t get_data;
 		struct eeprom_read_t read_data;
 		struct eeprom_write_t write_data;
@@ -323,8 +339,8 @@ struct msm_sensor_power_setting_array32 {
 };
 
 struct msm_camera_sensor_slave_info32 {
-	char sensor_name[MAX_SENSOR_NAME];
-	char eeprom_name[MAX_EEPROM_NAME];
+	char sensor_name[32];
+	char eeprom_name[32];
 	char actuator_name[32];
 	char ois_name[32];
 	char flash_name[32];
@@ -387,8 +403,15 @@ struct msm_eeprom_info_t32 {
 struct msm_eeprom_cfg_data32 {
 	enum eeprom_cfg_type_t cfgtype;
 	uint8_t is_supported;
+	/*
+	* Post compatible module info to vendor.by FENGYUAO_20150528.
+	*/
+	char sensor_module_name[MAX_SENSOR_NAME];
+	char chromtix_lib_name[MAX_SENSOR_NAME];
+	char default_chromtix_lib_name[MAX_SENSOR_NAME];
+	/* end */
 	union {
-		char eeprom_name[MAX_EEPROM_NAME];
+		char eeprom_name[MAX_SENSOR_NAME];
 		struct eeprom_get_t get_data;
 		struct eeprom_read_t32 read_data;
 		struct eeprom_write_t32 write_data;
