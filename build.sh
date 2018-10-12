@@ -10,4 +10,4 @@ make mrproper
 
 make  lineage_urd_defconfig
 
-make -j8 
+make -j4
