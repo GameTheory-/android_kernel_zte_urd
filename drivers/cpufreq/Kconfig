@@ -142,6 +142,12 @@ config CPU_FREQ_DEFAULT_GOV_NIGHTMARE
 	help
       Use the CPUFreq governor 'nightmare' as default.
 
+config CPU_FREQ_DEFAULT_GOV_LIONHEART
+            bool "lionheart"
+            select CPU_FREQ_GOV_LIONHEART
+            help
+              Use the CPUFreq governor 'lionheart' as default.
+
 endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
@@ -260,6 +266,13 @@ config CPU_FREQ_GOV_NIGHTMARE
 	  The cpufreq governor Nightmare. WJH
 	  To compile this driver as a module, choose M here: the
 	  module will be called cpufreq_nightmare.
+
+config CPU_FREQ_GOV_LIONHEART
+	tristate "'lionheart' governor"
+	help
+	  The cpufreq governor Lionheart. WJH
+	  To compile this driver as a module, choose M here: the
+	  module will be called cpufreq_lionheart.
 
 config CPU_BOOST
 	tristate "Event base short term CPU freq boost"
