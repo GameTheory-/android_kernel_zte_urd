@@ -776,3 +776,4 @@ endif
 source "lib/Kconfig"
 
 source "arch/arm64/hotplug/INTELLIPLUG/Kconfig"
+source "arch/arm64/hotplug/MSMHOTPLUG/Kconfig"
