@@ -585,6 +585,14 @@ endif
 
 include $(srctree)/arch/$(SRCARCH)/Makefile
 
+# Optimize based on our Arch (In this case, Cortex-A53) @raphielscape
+KBUILD_CFLAGS	+= $(call cc-option, -mcpu=cortex-a53+crc+crypto+sve+simd,) \
+                   $(call cc-option, -march=armv8-a+crc+crypto+sve+simd,) \
+                   $(call cc-option, -mtune=cortex-a53,)
+KBUILD_AFLAGS	+= $(call cc-option, -mcpu=cortex-a53+crc+crypto+sve+simd,) \
+                   $(call cc-option, -march=armv8-a+crc+crypto+sve+simd,) \
+                   $(call cc-option, -mtune=cortex-a53,)
+
 ifdef CONFIG_READABLE_ASM
 # Disable optimizations that make assembler listings hard to read.
 # reorder blocks reorders the control in the function
